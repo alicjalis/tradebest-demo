@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradeBest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-switcher {
+      display: flex; gap: 2px; align-items: center;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.55);
+      font-size: 12px; font-weight: 600;
+      padding: 4px 8px; border-radius: 3px;
+      cursor: pointer; font-family: inherit;
+      transition: background .15s, color .15s;
+      letter-spacing: .5px;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,.1); color: #fff; }
+    .lang-active {
+      background: rgba(255,255,255,.15) !important;
+      color: #fff !important;
+      border-color: rgba(255,255,255,.4) !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAWIGACJA ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo" data-view="home">Trade<span>Best</span></span>
+    <ul class="nav-links">
+      <li><a data-view="home">Strona glowna</a></li>
+      <li><a data-view="catalog">Produkty</a></li>
+      <li><a data-view="about">O firmie</a></li>
+      <li><a data-view="contact">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="nav-phone">Tel: <strong>+48 XXX XXX XXX</strong></div>
+      <div class="lang-switcher">
+        <button class="lang-btn lang-active" data-lang="pl" onclick="setLang('pl')">PL</button>
+        <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── STRONA GLOWNA ── -->
+<div class="view active" id="view-home">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Akcesoria wulkanizacyjne</div>
+      <h1>Wyposazenie serwisow<br>ogumienia</h1>
+      <p class="hero-desc">
+        Kompleksowa oferta dla punktow wulkanizacyjnych i serwisow opon.
+        Chemia warsztatowa, ciezarki, zawory, urzadzenia i materialy naprawcze.
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-red" data-view="catalog">Zobacz produkty</button>
+        <button class="btn btn-ghost" data-view="contact">Kontakt</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-cats-wrap">
+    <div class="home-cats-label">Asortyment</div>
+    <div class="home-cats-title">Kategorie produktow</div>
+    <!-- wypełniane przez app.js → renderHomeCats() -->
+    <div class="home-cats-grid" id="home-cats"></div>
+  </div>
+</div>
+
+<!-- ── KATALOG ── -->
+<div class="view" id="view-catalog">
+  <div class="catalog-wrap">
+    <!-- wypełniany przez app.js → renderSidebar('sidebar') -->
+    <div class="sidebar" id="sidebar"></div>
+    <div class="catalog-main">
+      <!-- wypełniany przez app.js → renderCatalog() -->
+      <div class="cat-header" id="cat-header"></div>
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STRONA PRODUKTU ── -->
+<div class="view" id="view-product">
+  <div class="product-detail-wrap">
+    <!-- wypełniany przez app.js → renderSidebar('sidebar2') -->
+    <div class="sidebar" id="sidebar2"></div>
+    <!-- wypełniany przez app.js → openProduct() -->
+    <div class="detail-main" id="detail-main"></div>
+  </div>
+</div>
+
+<!-- ── O FIRMIE ── -->
+<div class="view" id="view-about">
+  <div class="static-wrap">
+    <div class="static-label">O firmie</div>
+    <h2>NazwaFirmy</h2>
+    <p>
+      Firma NazwaFirmy specjalizuje sie w dostarczaniu
+      <strong>profesjonalnych akcesoriow i materialow wulkanizacyjnych</strong>
+      do serwisow ogumienia w Polsce. Nasza oferta opiera sie na sprawdzonych
+      produktach stosowanych od ponad 10 lat na rynku europejskim.
+    </p>
+    <p>
+      Cenimy bezposredni kontakt z klientem i szybkie dzialanie &mdash;
+      <strong>specyfika branzy wymaga natychmiastowych reakcji</strong>.
+      Obslugujemy zarowno male punkty wulkanizacyjne, jak i sieci serwisow oraz importerow.
+    </p>
+    <div class="about-stats">
+      <div class="stat-box"><div class="n">10+</div><div class="l">lat produktow na rynku EU</div></div>
+      <div class="stat-box"><div class="n">B2B</div><div class="l">oferta dla firm</div></div>
+      <div class="stat-box"><div class="n">6</div><div class="l">kategorii produktow</div></div>
+      <div class="stat-box"><div class="n">PL</div><div class="l">rynek krajowy</div></div>
+    </div>
+    <div class="about-cols">
+      <div>
+        <div class="feat">
+          <span class="feat-num">01</span>
+          <div><h4>Produkty sprawdzone w Europie</h4><p>Chemia warsztatowa stosowana od dekady w Niemczech i Europie Zachodniej.</p></div>
+        </div>
+        <div class="feat">
+          <span class="feat-num">02</span>
+          <div><h4>Szybka reakcja i dostawa</h4><p>Serwisy opon nie moga czekac. Odpowiadamy tego samego dnia.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="feat">
+          <span class="feat-num">03</span>
+          <div><h4>Kompleksowa oferta z jednego miejsca</h4><p>Chemia, ciezarki, zawory, narzedzia i maszyny w jednym zamowieniu.</p></div>
+        </div>
+        <div class="feat">
+          <span class="feat-num">04</span>
+          <div><h4>Bezposredni kontakt z ekspertem</h4><p>Doradzimy w doborze odpowiedniej pasty, ciezarka czy narzedzia.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── KONTAKT ── -->
+<div class="view" id="view-contact">
+  <div class="static-wrap">
+    <div class="static-label">Kontakt</div>
+    <h2>Skontaktuj sie z nami</h2>
+    <p>Pytanie o produkt, zamowienie lub wspolpraca &mdash; odezwij sie, odpowiadamy szybko.</p>
+    <div class="contact-cols">
+      <div class="contact-card">
+        <h3>Dane kontaktowe</h3>
+        <div class="c-row">
+          <div class="lbl">Telefon</div>
+          <div class="val"><a href="tel:+48XXXXXXXXX">+48 XXX XXX XXX</a></div>
+        </div>
+        <div class="c-row">
+          <div class="lbl">E-mail</div>
+          <div class="val"><a href="/cdn-cgi/l/email-protection#1d767273697c76695d696a72777c7b746f707c336d71"><span class="__cf_email__" data-cfemail="7f1410110b1e140b3f0b0810151e19160d121e510f13">[email&#160;protected]</span></a></div>
+        </div>
+        <div class="c-row">
+          <div class="lbl">Firma</div>
+          <div class="val">NazwaFirmy</div>
+        </div>
+        <div class="c-row">
+          <div class="lbl">Dzialanosc</div>
+          <div class="val" style="font-weight:400;font-size:14px;color:var(--muted)">
+            Wyposazenie serwisow ogumienia, akcesoria wulkanizacyjne
+          </div>
+        </div>
+      </div>
+      <div class="cta-card">
+        <div>
+          <h3>KTO PYTA, WIE WIECEJ</h3>
+          <p>Zadzwon lub napisz &mdash; pomozemy dobrac odpowiednie produkty i omowimy warunki wspolpracy.</p>
+          <div class="cta-big">+48 XXX XXX XXX</div>
+          <div class="cta-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5cecacbd1c4ced1e5d1d2cacfc4c3ccd7c8c48bd5c9">[email&#160;protected]</a></div>
+          <a href="tel:+48XXXXXXXXX" class="btn btn-red">Zadzwon teraz</a>
+        </div>
+        <div class="cta-note">
+          Oferta skierowana do punktow wulkanizacyjnych, serwisow ogumienia
+          oraz sieci i importerow.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Nazwa<span>Firmy</span></span>
+    <span>Wyposazenie serwisow ogumienia</span>
+    <span>
+      <a href="tel:+48XXXXXXXXX">+48 XXX XXX XXX</a>
+      &middot;
+      <a href="mailto:kontakt@twojafirma.pl">kontakt@twojafirma.pl</a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
