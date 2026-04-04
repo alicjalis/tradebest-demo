@@ -9320,8 +9320,7 @@ function renderHomeCats() {
 function openCat(catId) {
   currentCat = catId;
   searchQuery = '';
-  // usuń stary input żeby przy nowej kategorii się odrenderował świeży
-  const old = document.getElementById('cat-search');
+  const old = document.getElementById('cat-search-wrap');
   if (old) old.remove();
   showView('catalog');
 }
@@ -9351,35 +9350,33 @@ function renderProducts(cat, allProducts) {
       )
     : allProducts;
 
-  const countEl = document.getElementById('cat-count');
-  if (countEl) countEl.textContent = `${filtered.length} produktów${searchQuery ? ` (wyniki dla: "${searchQuery}")` : ''}`;
-
-  // nagłówek i licznik — bez inputa żeby nie tracił focusu
+  // nagłówek — tylko h2 i licznik, nigdy nie zawiera inputa
   document.getElementById('cat-header').innerHTML = `
     <h2>${catName(cat)}</h2>
-    <p id="cat-count">${filtered.length} ${t('products_label')}${searchQuery ? ` (${t('search_placeholder').replace('...','')}: "${searchQuery}")` : ''}</p>
+    <p id="cat-count">${filtered.length} ${t('products_label')}${searchQuery ? ` ("${searchQuery}")` : ''}</p>
   `;
 
-  // input renderujemy tylko raz, potem tylko aktualizujemy wartość
-  if (!document.getElementById('cat-search')) {
+  // input żyje w osobnym divie który nigdy nie jest przebudowywany
+  let searchWrap = document.getElementById('cat-search-wrap');
+  if (!searchWrap) {
+    searchWrap = document.createElement('div');
+    searchWrap.id = 'cat-search-wrap';
     const inp = document.createElement('input');
     inp.id = 'cat-search';
     inp.type = 'text';
     inp.placeholder = t('search_placeholder');
-    inp.value = searchQuery;
-    inp.style.cssText = 'margin-top:12px;width:100%;max-width:360px;padding:8px 12px;border:1px solid var(--border);border-radius:4px;font-family:inherit;font-size:14px;outline:none;display:block;background:var(--white);color:var(--text);';
+    inp.style.cssText = 'margin-top:12px;margin-bottom:4px;width:100%;max-width:360px;padding:8px 12px;border:1px solid var(--border);border-radius:4px;font-family:inherit;font-size:14px;outline:none;display:block;background:var(--white);color:var(--text);';
     inp.addEventListener('input', (e) => {
       searchQuery = e.target.value;
-      const currentCatObj = categories.find(c => c.id === currentCat);
-      renderProducts(currentCatObj, currentCatObj.products);
+      const c = categories.find(c => c.id === currentCat);
+      renderProducts(c, c.products);
     });
-    document.getElementById('cat-header').appendChild(inp);
+    searchWrap.appendChild(inp);
+    document.getElementById('cat-header').after(searchWrap);
   } else {
-    // zachowaj focus i pozycję kursora
+    // tylko placeholder — nigdy nie dotykamy value żeby nie gubić focusu
     const inp = document.getElementById('cat-search');
-    const sel = [inp.selectionStart, inp.selectionEnd];
-    inp.value = searchQuery;
-    inp.setSelectionRange(sel[0], sel[1]);
+    if (inp) inp.placeholder = t('search_placeholder');
   }
 
   document.getElementById('products-grid').innerHTML = filtered.length
