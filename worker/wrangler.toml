@@ -1,0 +1,11 @@
+name = "tradebest-formularz"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Binding do Cloudflare Email Routing
+[[send_email]]
+name = "EMAIL"
+destination_address = "tradebest@wp.pl"
+
+# Sekrety ustawiane przez: wrangler secret put TURNSTILE_SECRET
+# (nie wpisuj ich tutaj — wrangler zapyta interaktywnie)

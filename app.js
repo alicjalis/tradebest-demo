@@ -19,7 +19,7 @@ const catIcons = {
   "Paski klinowe i napedowe": `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="13" cy="24" r="8" stroke="#aaa" stroke-width="1.5"/><circle cx="35" cy="24" r="8" stroke="#aaa" stroke-width="1.5"/><line x1="13" y1="16" x2="35" y2="16" stroke="#aaa" stroke-width="2"/><line x1="13" y1="32" x2="35" y2="32" stroke="#aaa" stroke-width="2"/><circle cx="13" cy="24" r="3" stroke="#aaa" stroke-width="1.2" opacity=".5"/><circle cx="35" cy="24" r="3" stroke="#aaa" stroke-width="1.2" opacity=".5"/></svg>`,
   "Poduszki grzejne do wulkanizacji": `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="20" width="32" height="16" rx="4" stroke="#aaa" stroke-width="1.5"/><path d="M16 28h16" stroke="#aaa" stroke-width="1.2" stroke-linecap="round" opacity=".5"/><path d="M18 9 Q20 6 22 9 Q24 12 26 9 Q28 6 30 9" stroke="#aaa" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".7"/><path d="M18 14 Q20 11 22 14 Q24 17 26 14 Q28 11 30 14" stroke="#aaa" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".5"/></svg>`,
   "Narzedzia do znakowania opon": `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="14" y="30" width="20" height="10" rx="2" stroke="#aaa" stroke-width="1.5"/><rect x="18" y="18" width="12" height="14" rx="1" stroke="#aaa" stroke-width="1.5"/><rect x="20" y="10" width="8" height="10" rx="1" stroke="#aaa" stroke-width="1.3"/><line x1="14" y1="34" x2="34" y2="34" stroke="#aaa" stroke-width="1" opacity=".5" stroke-linecap="round"/><line x1="20" y1="22" x2="28" y2="22" stroke="#aaa" stroke-width="1" opacity=".4" stroke-linecap="round"/><line x1="20" y1="26" x2="28" y2="26" stroke="#aaa" stroke-width="1" opacity=".4" stroke-linecap="round"/></svg>`,
-  "Rekawice i ochrona osobista": `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M20 38V24a2 2 0 0 1 4 0" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/><path d="M24 24V20a2 2 0 0 1 4 0v4" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/><path d="M28 24v-2a2 2 0 0 1 4 0v4" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/><path d="M32 26v-1a2 2 0 0 1 4 0v10a6 6 0 0 1-6 6H22a6 6 0 0 1-6-6v-10a2 2 0 0 1 4 0v4" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/><path d="M16 28a2 2 0 0 0-4 0v2a2 2 0 0 0 4 0" stroke="#aaa" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+  "Rekawice i ochrona osobista": `<svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M10 44 L10 32 L7 28 Q4 24 7 21 Q10 18 12 22 L12 11 Q12 7 15.5 7 Q19 7 19 11 L19 22 L20 22 L20 9 Q20 5 23.5 5 Q27 5 27 9 L27 22 L28 22 L28 9 Q28 5 31.5 5 Q35 5 35 9 L35 22 L36 22 L36 11 Q36 7 39.5 7 Q43 7 43 11 L43 34 Q43 44 33 44 Z" stroke="#aaa" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>`,
 };
 
 // ─────────────────────────────────────────────
@@ -8983,6 +8983,7 @@ const UI = {
     hero_btn_contact: 'Kontakt',
     cats_label: 'Asortyment',
     cats_title: 'Kategorie produktów',
+    cats_search: 'Szukaj kategorii...',
     products_label: 'produktów',
     search_placeholder: 'Szukaj w tej kategorii...',
     prod_details: 'Szczegóły i zapytanie →',
@@ -8991,13 +8992,13 @@ const UI = {
     prod_inquiry_h: 'Zapytaj o ten produkt',
     prod_inquiry_p: 'Wypełnij formularz – odpiszemy tego samego dnia z wyceną i dostępnością.',
     f_name: 'Imię i firma', f_name_ph: 'Jan Kowalski / Firma XYZ',
-    f_contact: 'Telefon lub e-mail', f_contact_ph: '+48 XXX XXX XXX lub mail@firma.pl',
+    f_contact: 'Telefon lub e-mail', f_contact_ph: '+48 607 632 549 lub mail@firma.pl',
     f_msg: 'Treść zapytania', f_submit: 'Wyślij zapytanie',
     f_success: 'Dziękujemy! Odpiszemy wkrótce.',
     related: 'Inne produkty z kategorii',
     about_label: 'O firmie',
-    about_h: 'NazwaFirmy',
-    about_p1: 'Firma NazwaFirmy specjalizuje się w dostarczaniu <strong>profesjonalnych akcesoriów i materiałów wulkanizacyjnych</strong> do serwisów ogumienia w Polsce.',
+    about_h: '<img src="tb-logo-dlugie.svg" alt="TradeBest" style="height:40px;display:block;">',
+    about_p1: 'Firma TradeBest specjalizuje się w dostarczaniu <strong>profesjonalnych akcesoriów i materiałów wulkanizacyjnych</strong> do serwisów ogumienia w Polsce.',
     about_p2: 'Cenimy bezpośredni kontakt z klientem i szybkie działanie — <strong>specyfika branży wymaga natychmiastowych reakcji</strong>.',
     about_f1_t: 'Produkty sprawdzone w Europie', about_f1_p: 'Chemia warsztatowa stosowana od dekady w Niemczech i Europie Zachodniej.',
     about_f2_t: 'Szybka reakcja i dostawa', about_f2_p: 'Serwisy opon nie mogą czekać. Odpowiadamy tego samego dnia.',
@@ -9030,6 +9031,9 @@ const UI = {
     cat_poduszki: 'Poduszki grzejne do wulkanizacji',
     cat_znakow: 'Narzędzia do znakowania opon',
     cat_rekawice: 'Rękawice i ochrona osobista',
+    stat1: 'lat produktów na rynku EU', stat2: 'oferta dla firm', stat3: 'kategorii produktów', stat4: 'rynek krajowy',
+    lbl_phone: 'Telefon', lbl_email: 'E-mail', lbl_company: 'Firma', lbl_activity: 'Działalność',
+    val_activity: 'Wyposażenie serwisów ogumienia, akcesoria wulkanizacyjne',
   },
   de: {
     nav_home: 'Startseite', nav_products: 'Produkte',
@@ -9041,6 +9045,7 @@ const UI = {
     hero_btn_contact: 'Kontakt',
     cats_label: 'Sortiment',
     cats_title: 'Produktkategorien',
+    cats_search: 'Kategorie suchen...',
     products_label: 'Produkte',
     search_placeholder: 'In dieser Kategorie suchen...',
     prod_details: 'Details und Anfrage →',
@@ -9054,8 +9059,8 @@ const UI = {
     f_success: 'Danke! Wir melden uns bald.',
     related: 'Weitere Produkte aus der Kategorie',
     about_label: 'Über uns',
-    about_h: 'NazwaFirmy',
-    about_p1: 'NazwaFirmy ist spezialisiert auf <strong>professionelle Reifenservice-Zubehör</strong> für Vulkanisierungsbetriebe in Polen.',
+    about_h: '<img src="tb-logo-dlugie.svg" alt="TradeBest" style="height:40px;display:block;">',
+    about_p1: 'TradeBest ist spezialisiert auf <strong>professionelle Reifenservice-Zubehör</strong> für Vulkanisierungsbetriebe in Polen.',
     about_p2: 'Wir legen Wert auf direkten Kundenkontakt und schnelles Handeln — <strong>die Branche erfordert sofortige Reaktionen</strong>.',
     about_f1_t: 'Bewährte Produkte aus Europa', about_f1_p: 'Werkstattzubehör seit einem Jahrzehnt in Deutschland und Westeuropa bewährt.',
     about_f2_t: 'Schnelle Reaktion und Lieferung', about_f2_p: 'Reifenservices können nicht warten. Wir antworten noch am selben Tag.',
@@ -9088,6 +9093,9 @@ const UI = {
     cat_poduszki: 'Heizplatten für Vulkanisierung',
     cat_znakow: 'Kennzeichnungswerkzeuge für Reifen',
     cat_rekawice: 'Handschuhe und Persönlicher Schutz',
+    stat1: 'Jahre Produkte auf dem EU-Markt', stat2: 'Angebot für Unternehmen', stat3: 'Produktkategorien', stat4: 'polnischer Markt',
+    lbl_phone: 'Telefon', lbl_email: 'E-Mail', lbl_company: 'Firma', lbl_activity: 'Tätigkeit',
+    val_activity: 'Reifenservice-Ausrüstung, Vulkanisierungszubehör',
   },
   en: {
     nav_home: 'Home', nav_products: 'Products',
@@ -9099,6 +9107,7 @@ const UI = {
     hero_btn_contact: 'Contact',
     cats_label: 'Assortment',
     cats_title: 'Product categories',
+    cats_search: 'Search categories...',
     products_label: 'products',
     search_placeholder: 'Search in this category...',
     prod_details: 'Details and inquiry →',
@@ -9107,13 +9116,13 @@ const UI = {
     prod_inquiry_h: 'Inquire about this product',
     prod_inquiry_p: 'Fill in the form – we will reply the same day with pricing and availability.',
     f_name: 'Name and company', f_name_ph: 'John Smith / Company Ltd',
-    f_contact: 'Phone or e-mail', f_contact_ph: '+48 XXX XXX XXX or mail@company.com',
+    f_contact: 'Phone or e-mail', f_contact_ph: '+48 607 632 549 or mail@company.com',
     f_msg: 'Your inquiry', f_submit: 'Send inquiry',
     f_success: 'Thank you! We will get back to you shortly.',
     related: 'Other products from category',
     about_label: 'About us',
-    about_h: 'NazwaFirmy',
-    about_p1: 'NazwaFirmy specialises in <strong>professional tire service accessories and vulcanisation materials</strong> for workshops in Poland.',
+    about_h: '<img src="tb-logo-dlugie.svg" alt="TradeBest" style="height:40px;display:block;">',
+    about_p1: 'TradeBest specialises in <strong>professional tire service accessories and vulcanisation materials</strong> for workshops in Poland.',
     about_p2: 'We value direct customer contact and fast action — <strong>the industry demands immediate response</strong>.',
     about_f1_t: 'Proven European products', about_f1_p: 'Workshop chemicals used for a decade in Germany and Western Europe.',
     about_f2_t: 'Fast response and delivery', about_f2_p: 'Tire workshops cannot wait. We respond the same day.',
@@ -9146,6 +9155,9 @@ const UI = {
     cat_poduszki: 'Heating pads for vulcanisation',
     cat_znakow: 'Tyre marking tools',
     cat_rekawice: 'Gloves and personal protection',
+    stat1: 'years of products on the EU market', stat2: 'B2B offer', stat3: 'product categories', stat4: 'domestic market',
+    lbl_phone: 'Phone', lbl_email: 'E-mail', lbl_company: 'Company', lbl_activity: 'Activity',
+    val_activity: 'Tire service equipment, vulcanisation accessories',
   },
 };
 
@@ -9169,14 +9181,15 @@ function applyTranslations() {
 
   // home cats
   const cl = document.querySelector('.home-cats-label'); if (cl) cl.textContent = t('cats_label');
+  const cs = document.getElementById('cats-search'); if (cs) cs.placeholder = t('cats_search');
   const ct = document.querySelector('.home-cats-title'); if (ct) ct.textContent = t('cats_title');
 
   // footer
-  const fd = document.querySelectorAll('.footer-inner span')[1]; if (fd) fd.textContent = t('footer_desc');
+  const fd = document.querySelector('.footer-desc'); if (fd) fd.textContent = t('footer_desc');
 
   // about
   const abl = document.querySelector('#view-about .static-label'); if (abl) abl.textContent = t('about_label');
-  const abh = document.querySelector('#view-about h2'); if (abh) abh.textContent = t('about_h');
+  const abh = document.querySelector('#view-about h2'); if (abh) abh.innerHTML = t('about_h');
   const abps = document.querySelectorAll('#view-about > .static-wrap > p');
   if (abps[0]) abps[0].innerHTML = t('about_p1');
   if (abps[1]) abps[1].innerHTML = t('about_p2');
@@ -9197,6 +9210,11 @@ function applyTranslations() {
   const ctap = document.querySelector('.cta-card p'); if (ctap) ctap.textContent = t('cta_p');
   const ctab = document.querySelector('.cta-card .btn-red'); if (ctab) ctab.textContent = t('cta_btn');
   const ctan = document.querySelector('.cta-note'); if (ctan) ctan.textContent = t('cta_note');
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const val = t(el.dataset.i18n);
+    if (val) el.textContent = val;
+  });
 }
 
 function setLang(lang) {
@@ -9259,17 +9277,21 @@ let searchQuery = '';
 // ROUTING
 // ─────────────────────────────────────────────
 function showView(name, pushHistory = true) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById('view-' + name).classList.add('active');
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active', 'view-enter'));
+  const next = document.getElementById('view-' + name);
+  next.classList.add('active');
+  requestAnimationFrame(() => next.classList.add('view-enter'));
   document.querySelectorAll('.nav-links a').forEach(a =>
     a.classList.toggle('active', a.dataset.view === name)
   );
   window.scrollTo(0, 0);
+  if (typeof closeMobileNav === 'function') closeMobileNav();
   if (name === 'catalog') renderCatalog();
-  if (name === 'home')    renderHomeCats();
+  if (name === 'home')  { renderHomeCats(); initCatsSearch(); }
   if (pushHistory) {
     history.pushState({ view: name, cat: currentCat }, '', '#' + name);
   }
+  setTimeout(initReveal, 120);
 }
 
 function openCatHistory(catId) {
@@ -9302,16 +9324,25 @@ window.addEventListener('popstate', (e) => {
 // ─────────────────────────────────────────────
 // STRONA GLOWNA
 // ─────────────────────────────────────────────
-function renderHomeCats() {
+function renderHomeCats(filter = '') {
   const cl = document.querySelector('.home-cats-label'); if (cl) cl.textContent = t('cats_label');
   const ct = document.querySelector('.home-cats-title'); if (ct) ct.textContent = t('cats_title');
-  document.getElementById('home-cats').innerHTML = categories.map(cat => `
+  const q = filter.toLowerCase().trim();
+  const filtered = q ? categories.filter(cat => catName(cat).toLowerCase().includes(q)) : categories;
+  document.getElementById('home-cats').innerHTML = filtered.map(cat => `
     <div class="home-cat-card" onclick="openCat('${cat.id}')">
-      <div class="home-cat-icon">${catIcons[cat.name] || ''}</div>
       <div class="home-cat-name">${catName(cat)}</div>
       <div class="home-cat-count">${cat.products.length} ${t('products_label')}</div>
     </div>
   `).join('');
+  const noRes = document.getElementById('cats-no-results');
+  if (noRes) noRes.style.display = filtered.length === 0 ? 'block' : 'none';
+}
+
+function initCatsSearch() {
+  const input = document.getElementById('cats-search');
+  if (!input) return;
+  input.addEventListener('input', () => renderHomeCats(input.value));
 }
 
 // ─────────────────────────────────────────────
@@ -9463,6 +9494,7 @@ function _renderProduct(productId) {
             <label>${t('f_msg')}</label>
             <textarea rows="3" id="f-msg">${t('f_msg')}: ${prod.name} (${t('prod_cat_nr')} ${prod.nr})</textarea>
           </div>
+          <div class="cf-turnstile" data-sitekey="TURNSTILE_SITE_KEY" data-theme="dark" id="turnstile-widget"></div>
           <button class="btn-submit" onclick="submitInquiry()">${t('f_submit')}</button>
           <div class="success-msg" id="success-msg">${t('f_success')}</div>
         </div>
@@ -9494,17 +9526,73 @@ function _renderProduct(productId) {
 // ─────────────────────────────────────────────
 // FORMULARZ
 // ─────────────────────────────────────────────
-function submitInquiry() {
+async function submitInquiry() {
   const name    = document.getElementById('f-name').value.trim();
   const contact = document.getElementById('f-contact').value.trim();
+  const message = document.getElementById('f-msg').value.trim();
   if (!name || !contact) {
     alert('Proszę wypełnić imię i dane kontaktowe.');
     return;
   }
-  document.getElementById('success-msg').classList.add('show');
+
+  const token = turnstile.getResponse();
+  if (!token) {
+    alert('Proszę potwierdzić że nie jesteś robotem.');
+    return;
+  }
+
   const btn = document.querySelector('.btn-submit');
   btn.disabled = true;
   btn.style.opacity = '.5';
+
+  try {
+    const res = await fetch('WORKER_URL', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, name, contact, message }),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      document.getElementById('success-msg').classList.add('show');
+    } else {
+      alert('Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na tradebest@wp.pl');
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      turnstile.reset();
+    }
+  } catch {
+    alert('Błąd połączenia. Spróbuj ponownie lub napisz na tradebest@wp.pl');
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    turnstile.reset();
+  }
+}
+
+// ─────────────────────────────────────────────
+// SCROLL REVEAL
+// ─────────────────────────────────────────────
+function initReveal() {
+  const targets = document.querySelectorAll(
+    '.view.active .stat-box, .view.active .feat, .view.active .contact-card, ' +
+    '.view.active .cta-card, .view.active .home-cats-wrap, ' +
+    '.view.active .about-stats, .view.active .about-cols, ' +
+    '.view.active .static-label, .view.active .contact-cols'
+  );
+  targets.forEach((el, i) => {
+    if (!el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+      const delay = Math.min(i * 80, 400);
+      el.style.transitionDelay = delay + 'ms';
+    }
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal:not(.revealed)').forEach(el => io.observe(el));
 }
 
 // ─────────────────────────────────────────────
@@ -9514,9 +9602,36 @@ document.querySelectorAll('[data-view]').forEach(el =>
   el.addEventListener('click', () => showView(el.dataset.view))
 );
 
+// hamburger menu
+const burger = document.getElementById('nav-burger');
+const navLinks = document.querySelector('.nav-links');
+const overlay = document.getElementById('nav-overlay');
+
+function closeMobileNav() {
+  burger.classList.remove('open');
+  navLinks.classList.remove('open');
+  overlay.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+}
+
+burger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  overlay.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+});
+
+overlay.addEventListener('click', closeMobileNav);
+
+navLinks.querySelectorAll('a[data-view]').forEach(a =>
+  a.addEventListener('click', closeMobileNav)
+);
+
 // ustaw język i przetłumacz UI przy starcie
 document.querySelectorAll('.lang-btn').forEach(b =>
   b.classList.toggle('lang-active', b.dataset.lang === currentLang)
 );
 applyTranslations();
 renderHomeCats();
+initCatsSearch();
+setTimeout(initReveal, 200);

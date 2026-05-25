@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TradeBest</title>
+  <title>TradeBest – Wyposażenie serwisów ogumienia</title>
+  <meta name="description" content="Profesjonalne akcesoria wulkanizacyjne i wyposażenie serwisów ogumienia. Ciężarki, zawory, pasty, łatki, narzędzia i maszyny. Oferta B2B dla firm.">
+  <meta name="robots" content="index, follow">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="tb-logo-krotkie.svg" type="image/svg+xml">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     .lang-switcher {
       display: flex; gap: 2px; align-items: center;
@@ -33,7 +37,7 @@
 <!-- ── NAWIGACJA ── -->
 <nav>
   <div class="nav-inner">
-    <span class="nav-logo" data-view="home">Trade<span>Best</span></span>
+    <img src="tb-logo-dlugie.svg" class="nav-logo" data-view="home" alt="TradeBest" style="cursor:pointer;height:32px;display:block;">
     <ul class="nav-links">
       <li><a data-view="home">Strona glowna</a></li>
       <li><a data-view="catalog">Produkty</a></li>
@@ -41,15 +45,19 @@
       <li><a data-view="contact">Kontakt</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:12px;">
-      <div class="nav-phone">Tel: <strong>+48 XXX XXX XXX</strong></div>
+      <div class="nav-phone">Tel: <strong>+48 607 632 549</strong></div>
       <div class="lang-switcher">
         <button class="lang-btn lang-active" data-lang="pl" onclick="setLang('pl')">PL</button>
         <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
         <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
       </div>
     </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-mobile-overlay" id="nav-overlay"></div>
 
 <!-- ── STRONA GLOWNA ── -->
 <div class="view active" id="view-home">
@@ -70,9 +78,12 @@
 
   <div class="home-cats-wrap">
     <div class="home-cats-label">Asortyment</div>
-    <div class="home-cats-title">Kategorie produktow</div>
-    <!-- wypełniane przez app.js → renderHomeCats() -->
+    <div class="home-cats-header">
+      <div class="home-cats-title">Kategorie produktow</div>
+      <input class="cats-search" id="cats-search" type="search" placeholder="Szukaj kategorii..." autocomplete="off">
+    </div>
     <div class="home-cats-grid" id="home-cats"></div>
+    <div class="cats-no-results" id="cats-no-results" style="display:none">Brak wyników</div>
   </div>
 </div>
 
@@ -103,9 +114,9 @@
 <div class="view" id="view-about">
   <div class="static-wrap">
     <div class="static-label">O firmie</div>
-    <h2>NazwaFirmy</h2>
+    <h2><img src="tb-logo-dlugie.svg" alt="TradeBest" style="height:40px;display:block;"></h2>
     <p>
-      Firma NazwaFirmy specjalizuje sie w dostarczaniu
+      Firma TradeBest specjalizuje się w dostarczaniu
       <strong>profesjonalnych akcesoriow i materialow wulkanizacyjnych</strong>
       do serwisow ogumienia w Polsce. Nasza oferta opiera sie na sprawdzonych
       produktach stosowanych od ponad 10 lat na rynku europejskim.
@@ -116,10 +127,10 @@
       Obslugujemy zarowno male punkty wulkanizacyjne, jak i sieci serwisow oraz importerow.
     </p>
     <div class="about-stats">
-      <div class="stat-box"><div class="n">10+</div><div class="l">lat produktow na rynku EU</div></div>
-      <div class="stat-box"><div class="n">B2B</div><div class="l">oferta dla firm</div></div>
-      <div class="stat-box"><div class="n">6</div><div class="l">kategorii produktow</div></div>
-      <div class="stat-box"><div class="n">PL</div><div class="l">rynek krajowy</div></div>
+      <div class="stat-box"><div class="n">10+</div><div class="l" data-i18n="stat1">lat produktów na rynku EU</div></div>
+      <div class="stat-box"><div class="n">B2B</div><div class="l" data-i18n="stat2">oferta dla firm</div></div>
+      <div class="stat-box"><div class="n">6</div><div class="l" data-i18n="stat3">kategorii produktów</div></div>
+      <div class="stat-box"><div class="n">PL</div><div class="l" data-i18n="stat4">rynek krajowy</div></div>
     </div>
     <div class="about-cols">
       <div>
@@ -156,21 +167,21 @@
       <div class="contact-card">
         <h3>Dane kontaktowe</h3>
         <div class="c-row">
-          <div class="lbl">Telefon</div>
-          <div class="val"><a href="tel:+48XXXXXXXXX">+48 XXX XXX XXX</a></div>
+          <div class="lbl" data-i18n="lbl_phone">Telefon</div>
+          <div class="val"><a href="tel:+48607632549">+48 607 632 549</a></div>
         </div>
         <div class="c-row">
-          <div class="lbl">E-mail</div>
-          <div class="val"><a href="/cdn-cgi/l/email-protection#1d767273697c76695d696a72777c7b746f707c336d71"><span class="__cf_email__" data-cfemail="7f1410110b1e140b3f0b0810151e19160d121e510f13">[email&#160;protected]</span></a></div>
+          <div class="lbl" data-i18n="lbl_email">E-mail</div>
+          <div class="val" style="color:var(--muted);font-size:14px;font-weight:400">poprzez formularz kontaktowy</div>
         </div>
         <div class="c-row">
-          <div class="lbl">Firma</div>
-          <div class="val">NazwaFirmy</div>
+          <div class="lbl" data-i18n="lbl_company">Firma</div>
+          <div class="val">TradeBest</div>
         </div>
         <div class="c-row">
-          <div class="lbl">Dzialanosc</div>
-          <div class="val" style="font-weight:400;font-size:14px;color:var(--muted)">
-            Wyposazenie serwisow ogumienia, akcesoria wulkanizacyjne
+          <div class="lbl" data-i18n="lbl_activity">Działalność</div>
+          <div class="val" data-i18n="val_activity" style="font-weight:400;font-size:14px;color:var(--muted)">
+            Wyposażenie serwisów ogumienia, akcesoria wulkanizacyjne
           </div>
         </div>
       </div>
@@ -178,9 +189,8 @@
         <div>
           <h3>KTO PYTA, WIE WIECEJ</h3>
           <p>Zadzwon lub napisz &mdash; pomozemy dobrac odpowiednie produkty i omowimy warunki wspolpracy.</p>
-          <div class="cta-big">+48 XXX XXX XXX</div>
-          <div class="cta-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5cecacbd1c4ced1e5d1d2cacfc4c3ccd7c8c48bd5c9">[email&#160;protected]</a></div>
-          <a href="tel:+48XXXXXXXXX" class="btn btn-red">Zadzwon teraz</a>
+          <div class="cta-big">+48 607 632 549</div>
+          <a href="tel:+48607632549" class="btn btn-red">Zadzwoń teraz</a>
         </div>
         <div class="cta-note">
           Oferta skierowana do punktow wulkanizacyjnych, serwisow ogumienia
@@ -194,12 +204,10 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo">Nazwa<span>Firmy</span></span>
-    <span>Wyposazenie serwisow ogumienia</span>
+    <img src="tb-logo-dlugie.svg" alt="TradeBest" class="footer-logo" style="height:26px;display:block;">
+    <span class="footer-desc">Wyposazenie serwisow ogumienia</span>
     <span>
-      <a href="tel:+48XXXXXXXXX">+48 XXX XXX XXX</a>
-      &middot;
-      <a href="mailto:kontakt@twojafirma.pl">kontakt@twojafirma.pl</a>
+      <a href="tel:+48607632549">+48 607 632 549</a>
     </span>
   </div>
 </footer>
